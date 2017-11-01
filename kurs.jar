@@ -129,3 +129,60 @@ windowWidth = new JTextArea("");/*Устанавливаем значение
 в поле*/ 
 
 /* Подготавливаем временные компоненты */
+JPanel buttonsPanel = new JPanel(new FlowLayout()); 
+/* Расставляем компоненты по местам */ 
+/*метод add(), который помещает компонент в контейнер*/ 
+add(countLabel, BorderLayout.NORTH); /* Размещение компоненты 
+СЕВЕР*/ 
+add(variableLabel, BorderLayout.CENTER);/*Размещение 
+компонентым ЦЕНТР*/ 
+add(buttonsPanel, BorderLayout.SOUTH);/*Размещение компоненты 
+ЮГ*/ 
+buttonsPanel.add(getCost);/* Устанавливаем кнопку на 
+buttonsPanel */ 
+/*Размещение кнопки на форме обычно производится внутри метода 
+init() вызовом метода add() класса Container. */ 
+variableLabel.add(heightLabel);/*Устанавливаем кнопку на 
+variableLabel*/ 
+variableLabel.add(windowHeight);/*Устанавливаем кнопку на 
+variableLabel*/ 
+variableLabel.add(mmValue1);/*Устанавливаем кнопку на 
+variableLabel*/ 
+variableLabel.add(widthLabel);/*Устанавливаем кнопку на 
+variableLabel*/ 
+variableLabel.add(windowWidth);/*Устанавливаем кнопку на 
+variableLabel*/ 
+variableLabel.add(mmValue2);/*Устанавливаем кнопку на 
+variableLabel*/ 
+/*производится помещение текстовой метки JLabel, кнопки 
+JButton и окна JPanel на форму в апплете*/ 
+initListeners();/*запуск метода подсчета итоговой суммы*/ 
+/*метод init отвечает за инициализацию полей и размещение 
+компонента на форму*/ 
+} 
+
+private void initListeners() { 
+getCost.addActionListener(new ActionListener() { 
+public void actionPerformed(ActionEvent e) {/*ActionEvent e 
+- событие при нажатии кнопки*/ 
+/*ActionEvent – генерируется: при нажатии кнопки; двойном щелчке 
+клавишей мыши по элементам списка; при выборе пункта меню;*/ 
+/*Для регистрации заинтересованности блока прослушивания в 
+этом событии вызывается метод addActionListener() объектом
+класса JButton. Интерфейс ActionListener содержит единственный 
+метод actionPerformed(), который нужно реализовать в блоке 
+обработки в соответствии с поставленной задачей*/ 
+heightValue = Integer.valueOf(windowHeight.getText());/*Получает
+целочисленное значение вводимое в поле*/ 
+widthValue = Integer.valueOf(windowWidth.getText());/*Получает 
+целочисленное значение вводимое в поле*/ 
+/*Метод valueOf(String str) определен для всех классов-оболочек, 
+соответствующих примитивным типам, и выполняет действия по 
+преобразованию значения, заданного в виде строки, к значению 
+соответствующего объектного типа данных*/ 
+/*Получить значение текста метки можно методом getText().*/
+/*string представляет строковое значение*/ 
+/*integer - целое значение*/
+Перейти в конец истории
+Выбрать файлы
+Ещё
